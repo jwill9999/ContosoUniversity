@@ -7,16 +7,18 @@
 }
 
 <h2>Students</h2>
-
+<br />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button class="btn btn-primary" onClick="location.href ='@Url.Action("Create", "Students")';return false;">Create New</button>
+   
 </p>
+<br />
 @using (Html.BeginForm("Index", "Students", FormMethod.Get))
 {
     <p>
-        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-        <input type="submit" value="Search" />
-    </p>
+        <b>Find by name:</b> @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input class="btn" type="submit" value="Search" />
+    </p><br />
 }
 <table class="table">
     <tr>
@@ -45,9 +47,10 @@
                 @Html.DisplayFor(modelItem => item.EnrollmentDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                <button class="btn btn-warning" onClick="location.href =' @Url.Action("Edit", "Students", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn btn-info" onClick="location.href =' @Url.Action("Details", "Students", new { id = item.ID })';return false;">Details</button>
+                <button class="btn btn-danger" onClick="location.href =' @Url.Action("Delete", "Students", new { id = item.ID })';return false;">Delete</button>
+               
             </td>
         </tr>
     }
