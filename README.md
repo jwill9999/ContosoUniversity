@@ -17,9 +17,9 @@ Add edit update and delete
 
 ## Project preview
 
-![](./contosoUniversity/images/university1.png)
+![](./images/university1.png)
 
-![](./contosoUniversity/images/university2.png)
+![](./images/university2.png)
 
 
 
