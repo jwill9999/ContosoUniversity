@@ -37,6 +37,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+    <button class="btn btn-info" onClick="location.href =' @Url.Action("Edit", "Course", new { id = Model.CourseID })';return false;">Edit</button>
+
+  
     @Html.ActionLink("Back to List", "Index")
 </p>

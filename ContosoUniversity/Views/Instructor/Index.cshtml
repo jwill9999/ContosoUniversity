@@ -5,10 +5,13 @@
 }
 
 <h2>Instructors</h2>
+<br/>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button class="btn btn-primary" onClick="location.href =' @Url.Action("Create", "Instructor")';return false;">Create New</button>
+   
 </p>
+<br />
 <table class="table">
     <tr>
         <th>Last Name</th>
@@ -42,10 +45,14 @@
                 }
             </td>
             <td>
-                @Html.ActionLink("Select", "Index", new { id = item.ID }) |
+                <button class="btn " onClick="location.href =' @Url.Action("Index", "Instructor", new { id = item.ID })';return false;">Select</button>
+                <button class="btn btn-warning" onClick="location.href =' @Url.Action("Edit", "Instructor", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn btn-info" onClick="location.href =' @Url.Action("Details", "Instructor", new { id = item.ID  })';return false;">Details</button>
+                <button class="btn btn-danger" onClick="location.href =' @Url.Action("Delete", "Instructor", new { id = item.ID  })';return false;">Delete</button>
+                @*@Html.ActionLink("Select", "Index", new { id = item.ID }) |
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
             </td>
         </tr>
     }
@@ -72,7 +79,8 @@
             }
             <tr class="@selectedRow">
                 <td>
-                    @Html.ActionLink("Select", "Index", new { courseID = item.CourseID })
+                    <button class="btn " onClick="location.href =' @Url.Action("Index", "Instructor", new { courseId = item.CourseID })';return false;">Select</button>
+                    @*@Html.ActionLink("Select", "Index", new { courseID = item.CourseID })*@
                 </td>
                 <td>
                     @item.CourseID

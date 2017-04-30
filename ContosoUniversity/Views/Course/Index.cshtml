@@ -5,10 +5,13 @@
 }
 
 <h2>Courses</h2>
+<br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button class="btn btn-primary" onClick="location.href =' @Url.Action("Create", "Course")';return false;">Create New</button>
+   
 </p>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -41,9 +44,12 @@
             @Html.DisplayFor(modelItem => item.Department.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
+            <button class="btn btn-warning" onClick="location.href =' @Url.Action("Edit", "Course", new { id = item.CourseID })';return false;">Edit</button>
+            <button class="btn btn-info" onClick="location.href =' @Url.Action("Details", "Course", new { id = item.CourseID  })';return false;">Details</button>
+            <button class="btn btn-danger" onClick="location.href =' @Url.Action("Delete", "Course", new { id = item.CourseID  })';return false;">Delete</button>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
             @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })*@
         </td>
     </tr>
 }
